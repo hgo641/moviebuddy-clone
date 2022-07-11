@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Learn Essence of Spring Template
 
 본 프로젝트는 Learn Essence of Spring 워크숍(강좌)에서 사용할 템플릿 프로젝트입니다. 
@@ -39,3 +40,6 @@ $❯ build/moviebuddy/bin/moviebuddy
 ---
 
 워크숍(강좌)에 대한 자세한 소개는 [여기](https://springrunner.dev/training/learn-essence-of-spring-workshop/)에서 볼 수 있습니다.
+=======
+# moviebuddy-clone
+>>>>>>> 1b639d048bd256676f6fa43d4d6d74c08a051aed
