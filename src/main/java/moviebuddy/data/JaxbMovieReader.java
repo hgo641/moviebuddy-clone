@@ -1,4 +1,4 @@
-package moviebuddy.domain;
+package moviebuddy.data;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -19,6 +19,8 @@ import javax.xml.transform.stream.StreamSource;
 import org.springframework.stereotype.Repository;
 
 import moviebuddy.ApplicationException;
+import moviebuddy.domain.Movie;
+import moviebuddy.domain.MovieReader;
 
 @Repository
 public class JaxbMovieReader implements MovieReader {
