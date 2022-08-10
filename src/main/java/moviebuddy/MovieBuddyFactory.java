@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Scope;
+import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
 import moviebuddy.data.CsvMovieReader;
 import moviebuddy.domain.MovieFinder;
@@ -16,7 +17,15 @@ import moviebuddy.domain.MovieReader;
 @ComponentScan
 @Import({ MovieBuddyFactory.DomainModuleConfig.class, MovieBuddyFactory.DataSourceModuleConfig.class})
 public class MovieBuddyFactory {
-
+	
+	@Bean
+	public Jaxb2Marshaller jaxb2Marshaller() {
+		Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
+		marshaller.setPackagesToScan("moviebuddy");
+		
+		return marshaller;
+	}
+	
 	@Configuration
 	static class DomainModuleConfig{
 
