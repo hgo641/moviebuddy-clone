@@ -1,19 +1,29 @@
 package moviebuddy;
 
+import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
+
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
+import org.springframework.core.env.Environment;
+import org.springframework.oxm.Unmarshaller;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
+import moviebuddy.data.AbstractFileSystemMovieReader;
 import moviebuddy.data.CsvMovieReader;
+import moviebuddy.data.XmlMovieReader;
 import moviebuddy.domain.MovieFinder;
 import moviebuddy.domain.MovieReader;
 
 @Configuration
+@PropertySource("/application.properties")
 @ComponentScan
 @Import({ MovieBuddyFactory.DomainModuleConfig.class, MovieBuddyFactory.DataSourceModuleConfig.class})
 public class MovieBuddyFactory {
@@ -33,7 +43,8 @@ public class MovieBuddyFactory {
 	
 	@Configuration
 	static class DataSourceModuleConfig {
-
+		
+		
 	}
 
 }
